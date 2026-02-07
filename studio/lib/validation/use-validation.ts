@@ -12,8 +12,7 @@ export function useValidation<T extends z.ZodType>(schema: T) {
         return true
       } catch (err) {
         if (err instanceof z.ZodError) {
-          const zodError = err as z.ZodError<unknown>
-          setError(zodError.errors[0]?.message || 'Validation failed')
+          setError(err.issues[0]?.message || 'Validation failed')
         } else {
           setError('Validation failed')
         }
