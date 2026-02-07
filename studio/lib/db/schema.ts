@@ -1,7 +1,7 @@
 import { sql } from 'drizzle-orm';
-import { sqliteTable, text, integer, index } from 'drizzle-orm/sqlite-core';
+import { pgTable, text, timestamp, index } from 'drizzle-orm/pg-core';
 
-export const assets = sqliteTable('assets', {
+export const assets = pgTable('assets', {
     id: text('id').primaryKey(),
     type: text('type', { enum: ['image', 'social_post', 'article'] }).notNull(),
     content: text('content').notNull(), // Base64 for images, text for posts
@@ -9,8 +9,8 @@ export const assets = sqliteTable('assets', {
     metadata: text('metadata'), // JSON stringified metadata
     status: text('status', { enum: ['draft', 'published'] }).default('draft').notNull(),
     groupId: text('group_id').notNull().default('legacy_migration'), // Links assets to a single session/article
-    createdAt: integer('created_at', { mode: 'timestamp' })
-        .default(sql`(strftime('%s', 'now'))`)
+    createdAt: timestamp('created_at')
+        .default(sql`now()`)
         .notNull(),
 }, (table) => ({
     // Index for filtering by groupId (most common query)

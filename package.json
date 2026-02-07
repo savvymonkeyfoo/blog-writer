@@ -3,14 +3,13 @@
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-switch": "^1.2.6",
     "@tailwindcss/typography": "^0.5.19",
-    "better-sqlite3": "^12.6.2",
     "date-fns": "^4.1.0",
     "drizzle-orm": "^0.45.1",
     "marked": "^17.0.1",
+    "postgres": "^3.4.5",
     "react-markdown": "^10.1.0"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.13",
     "drizzle-kit": "^0.31.8"
   }
 }
