@@ -22,7 +22,7 @@ export function AngleCard({ angle, index, onSelect, isSelected }: AngleCardProps
             transition={{
                 delay: index * 0.1,
                 duration: 0.4,
-                type: "spring",
+                type: "spring" as const,
                 stiffness: 100,
                 damping: 15
             }}
@@ -67,7 +67,7 @@ export function AngleCard({ angle, index, onSelect, isSelected }: AngleCardProps
                             initial={{ opacity: 0, scale: 0, rotate: -180 }}
                             animate={{ opacity: 1, scale: 1, rotate: 0 }}
                             exit={{ opacity: 0, scale: 0, rotate: 180 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                            transition={{ type: "spring" as const, stiffness: 300, damping: 20 }}
                             className="absolute top-3 right-3 z-10"
                         >
                             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary to-[#FF3366] text-white text-xs font-bold shadow-xl uppercase tracking-wide">
