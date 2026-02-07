@@ -121,7 +121,8 @@ export default function HomePage() {
       setLastSaved(new Date())
 
       setTimeout(() => setSaveStatus('idle'), 2000)
-    } catch {
+    } catch (error) {
+      console.error('[saveContent] Failed to save content:', error)
       setSaveStatus('error')
       setTimeout(() => setSaveStatus('idle'), 3000)
     }

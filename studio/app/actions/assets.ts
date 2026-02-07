@@ -36,12 +36,15 @@ export const generateImagePromptsAction = withRateLimit('writing')(generateImage
 
 export async function saveAsset(asset: NewAsset) {
     try {
+        console.log('[saveAsset] Attempting to save asset:', { id: asset.id, type: asset.type, groupId: asset.groupId });
         await db.insert(assets).values(asset);
+        console.log('[saveAsset] Asset saved successfully:', asset.id);
         revalidatePath('/assets');
         return { success: true };
     } catch (error) {
-        console.error('Failed to save asset:', error);
-        return { success: false, error: 'Failed to save asset' };
+        console.error('[saveAsset] Failed to save asset:', error);
+        console.error('[saveAsset] Asset data:', asset);
+        return { success: false, error: error instanceof Error ? error.message : 'Failed to save asset' };
     }
 }
 
