@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables
+.env
+.env.local
+.env*.local
+**/.env.local
+
+# Next.js
+studio/.next/
+studio/.tmp/
+studio/out/
+studio/build/
+
+# Database
+studio/local.db
+studio/local.db-*
+*.db
+*.db-journal
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+studio/test-results/
+studio/playwright-report/
+coverage/
+
+# OS
+.DS_Store
+*.sw[a-p]
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*

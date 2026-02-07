@@ -1,0 +1,309 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Google News" [ref=e7] [cursor=pointer]:
+        - /url: ./?hl=en-AU&gl=AU&ceid=AU%3Aen
+        - generic [ref=e9]: News
+      - generic [ref=e10]:
+        - search [ref=e12]:
+          - combobox "Search for topics, locations & sources" [ref=e19]
+          - button "Advanced search" [ref=e20] [cursor=pointer]:
+            - generic [ref=e21]:
+              - generic "Advanced search" [ref=e22]:
+                - img [ref=e23]
+              - tooltip [ref=e25]: Advanced search
+          - button "Search" [ref=e26] [cursor=pointer]:
+            - img [ref=e27]
+        - generic [ref=e30]:
+          - generic [ref=e35]:
+            - button "Help" [ref=e36] [cursor=pointer]:
+              - img [ref=e38]
+            - tooltip [ref=e40]: Help
+          - generic [ref=e45]:
+            - button "Settings" [ref=e46] [cursor=pointer]:
+              - img [ref=e48]
+            - tooltip [ref=e51]: Settings
+      - generic [ref=e53]:
+        - button "Google apps" [ref=e57] [cursor=pointer]:
+          - img [ref=e58]
+        - link "Sign in" [ref=e61] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?passive=1209600&continue=https://news.google.com/home?hl%3Den-AU%26gl%3DAU%26ceid%3DAU:en&followup=https://news.google.com/home?hl%3Den-AU%26gl%3DAU%26ceid%3DAU:en&hl=en-AU&ec=GAZAqgM
+    - navigation [ref=e64]:
+      - tablist [ref=e65]:
+        - tab "Home" [selected] [ref=e66] [cursor=pointer]:
+          - tab "Home" [selected] [ref=e67]
+        - tab "For you" [ref=e68] [cursor=pointer]:
+          - tab "For you" [ref=e69]
+        - tab "Following" [ref=e70] [cursor=pointer]:
+          - tab "Following" [ref=e71]
+        - tab "News Showcase" [ref=e72] [cursor=pointer]:
+          - tab "News Showcase" [ref=e73]
+        - tab "Australia" [ref=e76] [cursor=pointer]:
+          - tab "Australia" [ref=e77]
+        - tab "World" [ref=e78] [cursor=pointer]:
+          - tab "World" [ref=e79]
+        - tab "Local" [ref=e80] [cursor=pointer]:
+          - tab "Local" [ref=e81]
+        - tab "Business" [ref=e82] [cursor=pointer]:
+          - tab "Business" [ref=e83]
+        - tab "Technology" [ref=e84] [cursor=pointer]:
+          - tab "Technology" [ref=e85]
+        - tab "Entertainment" [ref=e86] [cursor=pointer]:
+          - tab "Entertainment" [ref=e87]
+        - tab "Sports" [ref=e88] [cursor=pointer]:
+          - tab "Sports" [ref=e89]
+        - tab "Science" [ref=e90] [cursor=pointer]:
+          - tab "Science" [ref=e91]
+        - tab "Health" [ref=e92] [cursor=pointer]:
+          - tab "Health" [ref=e93]
+  - main [ref=e98]:
+    - generic [ref=e101]:
+      - generic [ref=e102]:
+        - generic [ref=e103]:
+          - heading "Your briefing" [level=1] [ref=e104]
+          - paragraph [ref=e105]: Wednesday 4 February
+        - generic [ref=e108]:
+          - generic [ref=e109]:
+            - generic [ref=e110]:
+              - generic [ref=e111]: Today
+              - img [ref=e112]
+              - generic [ref=e113]:
+                - generic [ref=e114]: 27°
+                - generic [ref=e115]: 19°
+            - generic [ref=e116]:
+              - generic [ref=e117]: Thu
+              - img [ref=e118]
+              - generic [ref=e119]:
+                - generic [ref=e120]: 32°
+                - generic [ref=e121]: 21°
+            - generic [ref=e122]:
+              - generic [ref=e123]: Fri
+              - img [ref=e124]
+              - generic [ref=e125]:
+                - generic [ref=e126]: 29°
+                - generic [ref=e127]: 22°
+            - generic [ref=e128]:
+              - generic [ref=e129]: Sat
+              - img [ref=e130]
+              - generic [ref=e131]:
+                - generic [ref=e132]: 30°
+                - generic [ref=e133]: 23°
+          - generic [ref=e134]:
+            - button "Expand to view forecast" [ref=e135] [cursor=pointer]:
+              - img [ref=e136]
+            - generic "Your local weather, 21°C, sunny" [ref=e138]:
+              - img "sunny" [ref=e139]:
+                - img [ref=e141]
+              - generic [ref=e148]:
+                - generic [ref=e149]:
+                  - generic [ref=e150]: Your local weather
+                  - button "Use precise location" [ref=e151] [cursor=pointer]:
+                    - img [ref=e152]
+                - generic [ref=e154]: 21°C
+                - link "Google Weather" [ref=e155] [cursor=pointer]:
+                  - /url: https://support.google.com/websearch/answer/13687874
+      - generic [ref=e157]:
+        - heading "Top stories" [level=3] [ref=e160]:
+          - link "Top stories" [ref=e161] [cursor=pointer]:
+            - /url: ./topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRFZxYUdjU0JXVnVMVWRDR2dKQlZTZ0FQAQ?hl=en-AU&gl=AU&ceid=AU%3Aen
+            - text: Top stories
+            - img [ref=e162]
+        - generic [ref=e167]:
+          - generic [ref=e168]:
+            - generic [ref=e169]:
+              - link [ref=e171] [cursor=pointer]:
+                - /url: ./read/CBMiiwFBVV95cUxPREFaamYwOUxSekl4VndtWl84WENuY2N0ZFdsMUpXRC1ZSXRBT1dHV19GWEk3NG1icnJUQ1MwM1NGT0oyMDFkVGJQcld2bnZ1c0MxN29LX0xfazQwN3JkTDBpNWhCZ3h1VmFQOTRHSDJ6WjNreDFXd2RpVTFJU3RyeHhSTXhzM0JHaUo4?hl=en-AU&gl=AU&ceid=AU%3Aen
+              - figure [ref=e172]
+              - generic [ref=e173]:
+                - generic [ref=e176]: Australian Broadcasting Corporation
+                - generic [ref=e180]:
+                  - generic:
+                    - button "More - US forces shoot down Iranian drone near American warship" [ref=e181] [cursor=pointer]:
+                      - img [ref=e183]
+                    - tooltip [ref=e185]: More
+              - link "US forces shoot down Iranian drone near American warship - Australian Broadcasting Corporation - 2 hours ago" [ref=e186] [cursor=pointer]:
+                - /url: ./read/CBMiiwFBVV95cUxPREFaamYwOUxSekl4VndtWl84WENuY2N0ZFdsMUpXRC1ZSXRBT1dHV19GWEk3NG1icnJUQ1MwM1NGT0oyMDFkVGJQcld2bnZ1c0MxN29LX0xfazQwN3JkTDBpNWhCZ3h1VmFQOTRHSDJ6WjNreDFXd2RpVTFJU3RyeHhSTXhzM0JHaUo4?hl=en-AU&gl=AU&ceid=AU%3Aen
+                - text: US forces shoot down Iranian drone near American warship
+              - time [ref=e188]: 2 hours ago
+            - generic [ref=e189]:
+              - generic [ref=e190]:
+                - link [ref=e192] [cursor=pointer]:
+                  - /url: ./read/CBMi7gFBVV95cUxQcnEyRUJvSGZ1SmNKbG9ZZmR2SWU3bWJ1Y2FMY2FkaURpUnRCU1JHbnhZTGJZUEFBcDFZN1R2cFlNVF9FejF3VVBfd3JONi1kakdheWJEOGhjVHZGOGcyc2ZaanY3Mmltc1JOcks3dmNxT0tyZlpRUFlKMnIxRFZKWnRfVVJRNGtaa1MyaHhlYkUycGYzT2FxWlQ2TzBXeU5DVmduUzNvNUZBZ3pHV0YwTHZqbm8tWGlwMmJXcks2b1FNSlAzN0Y2OU1BVmNhN2NIOHhJYUNPNHRDbG5ZM0JqSnNIYzJCTHRhWTFJNDV3?hl=en-AU&gl=AU&ceid=AU%3Aen
+                - generic [ref=e193]:
+                  - generic [ref=e196]: The Australian
+                  - generic [ref=e200]:
+                    - generic:
+                      - button "More - US shoots down Iranian drone aimed at aircraft carrier" [ref=e201] [cursor=pointer]:
+                        - img [ref=e203]
+                      - tooltip [ref=e205]: More
+                - link "US shoots down Iranian drone aimed at aircraft carrier - The Australian - 2 hours ago - By Summer Said, Benoît Faucon and Lara Seligman" [ref=e206] [cursor=pointer]:
+                  - /url: ./read/CBMi7gFBVV95cUxQcnEyRUJvSGZ1SmNKbG9ZZmR2SWU3bWJ1Y2FMY2FkaURpUnRCU1JHbnhZTGJZUEFBcDFZN1R2cFlNVF9FejF3VVBfd3JONi1kakdheWJEOGhjVHZGOGcyc2ZaanY3Mmltc1JOcks3dmNxT0tyZlpRUFlKMnIxRFZKWnRfVVJRNGtaa1MyaHhlYkUycGYzT2FxWlQ2TzBXeU5DVmduUzNvNUZBZ3pHV0YwTHZqbm8tWGlwMmJXcks2b1FNSlAzN0Y2OU1BVmNhN2NIOHhJYUNPNHRDbG5ZM0JqSnNIYzJCTHRhWTFJNDV3?hl=en-AU&gl=AU&ceid=AU%3Aen
+                  - text: US shoots down Iranian drone aimed at aircraft carrier
+                - generic [ref=e207]:
+                  - time [ref=e208]: 2 hours ago
+                  - separator [ref=e209]
+                  - generic [ref=e210]: By Summer Said, Benoît Faucon and Lara Seligman
+              - generic [ref=e211]:
+                - link [ref=e213] [cursor=pointer]:
+                  - /url: ./read/CBMi4AFBVV95cUxPczJHRG5xdy1RN2dHdndhM1NiNWowOHd6emRUUkRRQlJodUF0Y3R4UTAyTm95d3JPLU4yTEFjdzZVd2N6bVU3UkpWaUFjcDBOdjV5OV9UTGVTS0VTS3ZJSGFsWUE1SUt0ZU4td2ZJbW5FdzNpN0tISmlZczJJaGNFakEydXMzQmEwM29aVWUtdDRSZU5CdHlIcU82WkhiTkhmRTF1bENwNEdaOUU0U0tXZ2twZk9fT0Q5WHNqNHQ2NDZuOGpWMGtJRHNkSmhRdU05RlJwcmZSdm15Z1piQWpvcw?hl=en-AU&gl=AU&ceid=AU%3Aen
+                - generic [ref=e214]:
+                  - generic [ref=e217]: SMH.com.au
+                  - generic [ref=e221]:
+                    - generic:
+                      - button "More - Fighter jet shoots down Iranian drone approaching aircraft carrier, US military says" [ref=e222] [cursor=pointer]:
+                        - img [ref=e224]
+                      - tooltip [ref=e226]: More
+                - link "Fighter jet shoots down Iranian drone approaching aircraft carrier, US military says - SMH.com.au - 2 hours ago - By Phil Stewart and Idrees Ali" [ref=e227] [cursor=pointer]:
+                  - /url: ./read/CBMi4AFBVV95cUxPczJHRG5xdy1RN2dHdndhM1NiNWowOHd6emRUUkRRQlJodUF0Y3R4UTAyTm95d3JPLU4yTEFjdzZVd2N6bVU3UkpWaUFjcDBOdjV5OV9UTGVTS0VTS3ZJSGFsWUE1SUt0ZU4td2ZJbW5FdzNpN0tISmlZczJJaGNFakEydXMzQmEwM29aVWUtdDRSZU5CdHlIcU82WkhiTkhmRTF1bENwNEdaOUU0U0tXZ2twZk9fT0Q5WHNqNHQ2NDZuOGpWMGtJRHNkSmhRdU05RlJwcmZSdm15Z1piQWpvcw?hl=en-AU&gl=AU&ceid=AU%3Aen
+                  - text: Fighter jet shoots down Iranian drone approaching aircraft carrier, US military says
+                - generic [ref=e228]:
+                  - time [ref=e229]: 2 hours ago
+                  - separator [ref=e230]
+                  - generic [ref=e231]: By Phil Stewart and Idrees Ali
+              - generic [ref=e232]:
+                - link [ref=e234] [cursor=pointer]:
+                  - /url: ./read/CBMijAFBVV95cUxQMjFCQnRDUFZhbnh0Z295TTdocHgtWnRERC1JYkNrcjBJbmYwNF9KbHdLcUFhWmNXVUpYS2htZWZWQ2RpTERmdzVHb05GX1J3MVZEd3VGOXk0b1dmeUk2OG0tUmFEdTM2aEtmOTdIMXp1XzRNSmliaUxsNUoyUTBwZDhadTRCcU9qMTA4ZA?hl=en-AU&gl=AU&ceid=AU%3Aen
+                - generic [ref=e235]:
+                  - generic [ref=e238]: The Guardian
+                  - generic [ref=e242]:
+                    - generic:
+                      - 'button "More - Morning Mail: US shoots down Iranian drone, Mandelson investigated over Epstein scandal, interest rates rise pain" [ref=e243] [cursor=pointer]':
+                        - img [ref=e245]
+                      - tooltip [ref=e247]: More
+                - 'link "Morning Mail: US shoots down Iranian drone, Mandelson investigated over Epstein scandal, interest rates rise pain - The Guardian - 1 hour ago - By Anna Macdonald" [ref=e248] [cursor=pointer]':
+                  - /url: ./read/CBMijAFBVV95cUxQMjFCQnRDUFZhbnh0Z295TTdocHgtWnRERC1JYkNrcjBJbmYwNF9KbHdLcUFhWmNXVUpYS2htZWZWQ2RpTERmdzVHb05GX1J3MVZEd3VGOXk0b1dmeUk2OG0tUmFEdTM2aEtmOTdIMXp1XzRNSmliaUxsNUoyUTBwZDhadTRCcU9qMTA4ZA?hl=en-AU&gl=AU&ceid=AU%3Aen
+                  - text: "Morning Mail: US shoots down Iranian drone, Mandelson investigated over Epstein scandal, interest rates rise pain"
+                - generic [ref=e249]:
+                  - time [ref=e250]: 1 hour ago
+                  - separator [ref=e251]
+                  - generic [ref=e252]: By Anna Macdonald
+          - link "See more headlines and perspectives" [ref=e255] [cursor=pointer]:
+            - /url: ./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lFMDVXNkVCSF93VHA3WW1UQVpTZ0FQAQ?hl=en-AU&gl=AU&ceid=AU%3Aen
+            - img [ref=e256]
+            - generic [ref=e258]: See more headlines and perspectives
+        - generic [ref=e262]:
+          - link "Boy, 13, swims 4km to save family in Western Australia" [ref=e264] [cursor=pointer]:
+            - /url: ./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pULXVxN0VCSHEyUEZpak40cUJDZ0FQAQ?hl=en-AU&gl=AU&ceid=AU%3Aen
+            - text: Boy, 13, swims 4km to save family in Western Australia chevron_right
+          - generic [ref=e265]:
+            - generic [ref=e266]:
+              - link [ref=e268] [cursor=pointer]:
+                - /url: ./read/CBMi4wFBVV95cUxOaG9jMm1uR3lKVnA5eHF0enNVaVpjUzMyMzdsTVlzaDlJRklub2lrY2kwSUM2ai1uWXJWWDExcWlZTG5yTUhiTjlIWFlfaWt3RTY5YjUyeEF5T3RESml4Qjl6NDVNYnMzVjN5TGhxbEZ6Z3ExM2dvTEtMR3Nfd0libGZmbHNIV25kbGxabnV6OVBiYWNrY1NieTZfZG1GbGNVb0R2ZXIzdzRVTTJfeklFRGRfSzRZcjdTQVh3TTE5bnRCdjFJdHRQS09YajlRcFNFS29ORTY2S0VTYzY4VXFiTm9PMNIB6AFBVV95cUxNbWljRlNKQVY1NmhxZFN4dkJVTFlOalF2YkpVZzBZYjJBRW9MdDVBc29sdUdTQ3JvOHYyWV9sQjFiVy1vWlN3NGdnVjBTYW0yUlRoS1U5TFI2akMyTjF5ejRHSXNSSDZaUEpReHltU0dqODB0M1ZBbUN1Tm5UVXJYSmdoT29oakEwSnI4Tm5pYjFYNURSR2tKaGZPQkJJaUtIVVV4aGxxZ2FwUGo1cUl1SzlobVBvbXgtWEJwY2Z2V3lqNi12aHFUUmgyY0M0VG9QcHNobWZhTWQ4cVNaN2FGOVJpMy1uWDFS?hl=en-AU&gl=AU&ceid=AU%3Aen
+              - figure [ref=e269]
+              - generic [ref=e270]:
+                - generic [ref=e273]: The West Australian
+                - generic [ref=e277]:
+                  - generic:
+                    - 'button "More - Austin Appelbee: Year 9 student’s heroic 4km swim to save mum, brother and sister after being swept out to sea" [ref=e278] [cursor=pointer]':
+                      - img [ref=e280]
+                    - tooltip [ref=e282]: More
+              - 'link "Austin Appelbee: Year 9 student’s heroic 4km swim to save mum, brother and sister after being swept out to sea - The West Australian - 15 hours ago - By Brooke Rolfe" [ref=e283] [cursor=pointer]':
+                - /url: ./read/CBMi4wFBVV95cUxOaG9jMm1uR3lKVnA5eHF0enNVaVpjUzMyMzdsTVlzaDlJRklub2lrY2kwSUM2ai1uWXJWWDExcWlZTG5yTUhiTjlIWFlfaWt3RTY5YjUyeEF5T3RESml4Qjl6NDVNYnMzVjN5TGhxbEZ6Z3ExM2dvTEtMR3Nfd0libGZmbHNIV25kbGxabnV6OVBiYWNrY1NieTZfZG1GbGNVb0R2ZXIzdzRVTTJfeklFRGRfSzRZcjdTQVh3TTE5bnRCdjFJdHRQS09YajlRcFNFS29ORTY2S0VTYzY4VXFiTm9PMNIB6AFBVV95cUxNbWljRlNKQVY1NmhxZFN4dkJVTFlOalF2YkpVZzBZYjJBRW9MdDVBc29sdUdTQ3JvOHYyWV9sQjFiVy1vWlN3NGdnVjBTYW0yUlRoS1U5TFI2akMyTjF5ejRHSXNSSDZaUEpReHltU0dqODB0M1ZBbUN1Tm5UVXJYSmdoT29oakEwSnI4Tm5pYjFYNURSR2tKaGZPQkJJaUtIVVV4aGxxZ2FwUGo1cUl1SzlobVBvbXgtWEJwY2Z2V3lqNi12aHFUUmgyY0M0VG9QcHNobWZhTWQ4cVNaN2FGOVJpMy1uWDFS?hl=en-AU&gl=AU&ceid=AU%3Aen
+                - text: "Austin Appelbee: Year 9 student’s heroic 4km swim to save mum, brother and sister after being swept out to sea"
+              - generic [ref=e284]:
+                - time [ref=e285]: 15 hours ago
+                - separator [ref=e286]
+                - generic [ref=e287]: By Brooke Rolfe
+            - generic [ref=e288]:
+              - generic [ref=e289]:
+                - link [ref=e291] [cursor=pointer]:
+                  - /url: ./read/CBMiqwFBVV95cUxOQjg1eVNfRGJyOFZrMUlCRnJOdDFYZUw4bzVUSEpTUDllMEVKdWxXOUwwNEVSZGYwTVdzZUNyNnNKYWxrZzlnRzZqaFV2c0N6dmJ0cFk5Ukk1QkZUOTdOR2ZETWRXS3R6V2FrbkZCRFZRNUFGYWpzdzZueHBsUjNlTkZ0aE4tQVpBRjE5U0RVNVAydElXMS1qWE9TV1RhX2pQWEFIZ0QwOWFoZ3M?hl=en-AU&gl=AU&ceid=AU%3Aen
+                - generic [ref=e292]:
+                  - generic [ref=e295]: The Guardian
+                  - generic [ref=e299]:
+                    - generic:
+                      - button "More - Boy swims four hours in rough seas to save mother and siblings off Western Australia" [ref=e300] [cursor=pointer]:
+                        - img [ref=e302]
+                      - tooltip [ref=e304]: More
+                - link "Boy swims four hours in rough seas to save mother and siblings off Western Australia - The Guardian - 19 hours ago" [ref=e305] [cursor=pointer]:
+                  - /url: ./read/CBMiqwFBVV95cUxOQjg1eVNfRGJyOFZrMUlCRnJOdDFYZUw4bzVUSEpTUDllMEVKdWxXOUwwNEVSZGYwTVdzZUNyNnNKYWxrZzlnRzZqaFV2c0N6dmJ0cFk5Ukk1QkZUOTdOR2ZETWRXS3R6V2FrbkZCRFZRNUFGYWpzdzZueHBsUjNlTkZ0aE4tQVpBRjE5U0RVNVAydElXMS1qWE9TV1RhX2pQWEFIZ0QwOWFoZ3M?hl=en-AU&gl=AU&ceid=AU%3Aen
+                  - text: Boy swims four hours in rough seas to save mother and siblings off Western Australia
+                - time [ref=e307]: 19 hours ago
+              - generic [ref=e308]:
+                - link [ref=e310] [cursor=pointer]:
+                  - /url: ./read/CBMiuAFBVV95cUxNMFhiRTV0NktVcFJwbXpzSy1IR25SN0VGQVM4U3JTRnZ4U21UMW5KMFQwRVZMUkxNejNObXNXYUhJNFRIdWg1VXpQeEthVFZpNXUxZUxqbzQ1UWRpLXhxeXlRVWJMSUYtWWt2RDREYnB4YmNFZlV0SGpFVmlER1NqZWNKVVhjRlZZYTdJUDMxSDZlRk1INkhTdTRDX0EycXZUaHRKQnNfNzktZWUwSDJ6alFvTUhFZFZP?hl=en-AU&gl=AU&ceid=AU%3Aen
+                - generic [ref=e311]:
+                  - generic [ref=e314]: SBS Australia
+                  - generic [ref=e318]:
+                    - generic:
+                      - 'button "More - ''Just keep swimming'': Heroic WA teen swam for hours to save family swept out to sea" [ref=e319] [cursor=pointer]':
+                        - img [ref=e321]
+                      - tooltip [ref=e323]: More
+                - 'link "''Just keep swimming'': Heroic WA teen swam for hours to save family swept out to sea - SBS Australia - 1 hour ago" [ref=e324] [cursor=pointer]':
+                  - /url: ./read/CBMiuAFBVV95cUxNMFhiRTV0NktVcFJwbXpzSy1IR25SN0VGQVM4U3JTRnZ4U21UMW5KMFQwRVZMUkxNejNObXNXYUhJNFRIdWg1VXpQeEthVFZpNXUxZUxqbzQ1UWRpLXhxeXlRVWJMSUYtWWt2RDREYnB4YmNFZlV0SGpFVmlER1NqZWNKVVhjRlZZYTdJUDMxSDZlRk1INkhTdTRDX0EycXZUaHRKQnNfNzktZWUwSDJ6alFvTUhFZFZP?hl=en-AU&gl=AU&ceid=AU%3Aen
+                  - text: "'Just keep swimming': Heroic WA teen swam for hours to save family swept out to sea"
+                - time [ref=e326]: 1 hour ago
+              - generic [ref=e327]:
+                - link [ref=e329] [cursor=pointer]:
+                  - /url: ./read/CBMingFBVV95cUxQYmNWcXY2eEFaczQ0R0RpeTRMWnI4ZDVJZEVfOWNSbm1hS0ZBYS1hemRJUHlYdVJ5UHFYOFR4U2dmS2VqVVZzLS1yTXVJdVVJb3hOa1hRTy1vWlZ1bGhJWnU2c09wS3RZdWFTdnd4QXJtLU92dnI2ZzM2NDc1Rmt4M3lIcmJRTlZVYkVfeERkRkNSWHFFVUJzRkIxb21zQQ?hl=en-AU&gl=AU&ceid=AU%3Aen
+                - generic [ref=e330]:
+                  - generic [ref=e333]: Australian Broadcasting Corporation
+                  - generic [ref=e337]:
+                    - generic:
+                      - button "More - Mother says sending son to swim 4km for help 'one of the hardest decisions'" [ref=e338] [cursor=pointer]:
+                        - img [ref=e340]
+                      - tooltip [ref=e342]: More
+                - link "Mother says sending son to swim 4km for help 'one of the hardest decisions' - Australian Broadcasting Corporation - 44 minutes ago - By Briana Shepherd and Kate Christian" [ref=e343] [cursor=pointer]:
+                  - /url: ./read/CBMingFBVV95cUxQYmNWcXY2eEFaczQ0R0RpeTRMWnI4ZDVJZEVfOWNSbm1hS0ZBYS1hemRJUHlYdVJ5UHFYOFR4U2dmS2VqVVZzLS1yTXVJdVVJb3hOa1hRTy1vWlZ1bGhJWnU2c09wS3RZdWFTdnd4QXJtLU92dnI2ZzM2NDc1Rmt4M3lIcmJRTlZVYkVfeERkRkNSWHFFVUJzRkIxb21zQQ?hl=en-AU&gl=AU&ceid=AU%3Aen
+                  - text: Mother says sending son to swim 4km for help 'one of the hardest decisions'
+                - generic [ref=e344]:
+                  - time [ref=e345]: 44 minutes ago
+                  - separator [ref=e346]
+                  - generic [ref=e347]: By Briana Shepherd and Kate Christian
+          - link "See more headlines and perspectives - Boy, 13, swims 4km to save family in Western Australia" [ref=e350] [cursor=pointer]:
+            - /url: ./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pULXVxN0VCSHEyUEZpak40cUJDZ0FQAQ?hl=en-AU&gl=AU&ceid=AU%3Aen
+            - img [ref=e351]
+            - generic [ref=e353]: See more headlines and perspectives
+        - generic [ref=e357]:
+          - generic [ref=e358]:
+            - link [ref=e360] [cursor=pointer]:
+              - /url: ./read/CBMiWkFVX3lxTE5sOTBFNnFfbF9EY2xYa1JnOTVQLThlUjd2WkFHLVJZeVRXX0xNa1l0SnM5TVdwUzh1UndiN3pZZ285cElvR1g0RUU5ODNrN3dzSk5JN2xhZ0ZEUQ?hl=en-AU&gl=AU&ceid=AU%3Aen
+            - generic [ref=e362]:
+              - generic [ref=e363]:
+                - generic [ref=e366]: BBC
+                - generic [ref=e370]:
+                  - generic:
+                    - button "More - Partial government shutdown ends after US House vote" [ref=e371] [cursor=pointer]:
+                      - img [ref=e373]
+                    - tooltip [ref=e375]: More
+              - link "Partial government shutdown ends after US House vote - BBC - 2 hours ago - By Kayla Epstein and Max Matza" [ref=e376] [cursor=pointer]:
+                - /url: ./read/CBMiWkFVX3lxTE5sOTBFNnFfbF9EY2xYa1JnOTVQLThlUjd2WkFHLVJZeVRXX0xNa1l0SnM5TVdwUzh1UndiN3pZZ285cElvR1g0RUU5ODNrN3dzSk5JN2xhZ0ZEUQ?hl=en-AU&gl=AU&ceid=AU%3Aen
+                - text: Partial government shutdown ends after US House vote
+            - figure [ref=e377]
+          - generic [ref=e378]:
+            - time [ref=e379]: 2 hours ago
+            - separator [ref=e380]
+            - generic [ref=e381]: By Kayla Epstein and Max Matza
+            - link "See more headlines and perspectives - Partial government shutdown ends after US House vote" [ref=e382] [cursor=pointer]:
+              - /url: ./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pXNnRteUVCRXh4ZHZmM1BIckp5Z0FQAQ?hl=en-AU&gl=AU&ceid=AU%3Aen
+              - img [ref=e383]
+              - generic [ref=e385]: See more
+        - generic [ref=e389]:
+          - generic [ref=e390]:
+            - link [ref=e392] [cursor=pointer]:
+              - /url: ./read/CBMi9AFBVV95cUxPdnpCd184ZFd0T1ZLSFJyMFZzdkM1YkdjZG1XNHVmanhuUVBaM1B1eTdkSmpQLW12Y3MtSDRBLWJ2Mjl3dUVidlhWLU9uUmJXZjdOS3pyY0o0M3ZlbXJ0MDJ2NDZDdVdoS21RQkV4bTloTFo2aUU0SFF6eVVhTjNWR082eHdmd0xadGlvS0xxRE15aENKSTJlaEFwTVBIUW43ZEVEOWN4Y0ZVdnVCdXU0Rm5mZ1ktb2xCdlpZRl9YRDNTMXpDWHRlZDNXWkh3bExrNnRxOTNHVHpyZU1WQ0VURkRnSlRXR0tsX3J4TUZJUk4zdENO?hl=en-AU&gl=AU&ceid=AU%3Aen
+            - generic [ref=e394]:
+              - generic [ref=e395]:
+                - generic [ref=e398]: WAtoday
+                - generic [ref=e402]:
+                  - generic:
+                    - 'button "More - ‘Unspeakable tragedy’: Disability minister faces questions over Mosman Park murder-suicide" [ref=e403] [cursor=pointer]':
+                      - img [ref=e405]
+                    - tooltip [ref=e407]: More
+              - 'link "‘Unspeakable tragedy’: Disability minister faces questions over Mosman Park murder-suicide - WAtoday - 19 hours ago - By Hamish Hastie" [ref=e408] [cursor=pointer]':
+                - /url: ./read/CBMi9AFBVV95cUxPdnpCd184ZFd0T1ZLSFJyMFZzdkM1YkdjZG1XNHVmanhuUVBaM1B1eTdkSmpQLW12Y3MtSDRBLWJ2Mjl3dUVidlhWLU9uUmJXZjdOS3pyY0o0M3ZlbXJ0MDJ2NDZDdVdoS21RQkV4bTloTFo2aUU0SFF6eVVhTjNWR082eHdmd0xadGlvS0xxRE15aENKSTJlaEFwTVBIUW43ZEVEOWN4Y0ZVdnVCdXU0Rm5mZ1ktb2xCdlpZRl9YRDNTMXpDWHRlZDNXWkh3bExrNnRxOTNHVHpyZU1WQ0VURkRnSlRXR0tsX3J4TUZJUk4zdENO?hl=en-AU&gl=AU&ceid=AU%3Aen
+                - text: "‘Unspeakable tragedy’: Disability minister faces questions over Mosman Park murder-suicide"
+            - figure [ref=e409]
+          - generic [ref=e410]:
+            - time [ref=e411]: 19 hours ago
+            - separator [ref=e412]
+            - generic [ref=e413]: By Hamish Hastie
+            - 'link "See more headlines and perspectives - ‘Unspeakable tragedy’: Disability minister faces questions over Mosman Park murder-suicide" [ref=e414] [cursor=pointer]':
+              - /url: ./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2o2NC1DNUVCR0Q3ZFlEN1lwZ2h5Z0FQAQ?hl=en-AU&gl=AU&ceid=AU%3Aen
+              - img [ref=e415]
+              - generic [ref=e417]: See more
+      - heading "Local news" [level=3] [ref=e423]:
+        - link "Local news" [ref=e424] [cursor=pointer]:
+          - /url: ./topics/CAAqHAgKIhZDQklTQ2pvSWJHOWpZV3hmZGpJb0FBUAE?hl=en-AU&gl=AU&ceid=AU%3Aen
+          - text: Local news
+          - img [ref=e425]

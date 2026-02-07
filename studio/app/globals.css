@@ -1,0 +1,790 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-card: var(--card);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-radius: var(--radius);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-popover: var(--popover);
+  --color-primary: var(--primary);
+  --color-sidebar: var(--sidebar);
+  --color-font-mono: var(--font-mono);
+  --color-font-sans: var(--font-sans);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-font-serif: var(--font-serif);
+  --color-foreground: var(--foreground);
+  --color-destructive: var(--destructive);
+  --color-shadow-blur: var(--shadow-blur);
+  --color-shadow-color: var(--shadow-color);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-shadow-spread: var(--shadow-spread);
+  --color-shadow-opacity: var(--shadow-opacity);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-card-foreground: var(--card-foreground);
+  --color-shadow-offset-x: var(--shadow-offset-x);
+  --color-shadow-offset-y: var(--shadow-offset-y);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+
+  /* Font configuration mapping */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+}
+
+:root {
+  /* Deep Navy + Electric Blue + Hot Pink - Light Mode */
+  --card: #ffffff;
+  --ring: #0066FF;
+  --input: #cbd5e1;
+  --muted: #f1f5f9;
+  --accent: #eff6ff;
+  --border: #cbd5e1;
+  --radius: 0.75rem;
+  --chart-1: #0066FF;
+  --chart-2: #0052CC;
+  --chart-3: #003D99;
+  --chart-4: #FF3366;
+  --chart-5: #CC0033;
+  --popover: #ffffff;
+  --primary: #0066FF;
+  --sidebar: #f8fafc;
+  --font-mono: "Space Mono", monospace;
+  --font-sans: "General Sans", -apple-system, sans-serif;
+  --secondary: #f1f5f9;
+  --background: #ffffff;
+  --font-serif: "General Sans", -apple-system, sans-serif;
+  --foreground: #0f172a;
+  --destructive: #FF3366;
+
+  /* Tech shadow system */
+  --shadow-blur: 24px;
+  --shadow-color: 217 100% 50%;
+  --shadow-spread: -6px;
+  --shadow-opacity: 0.12;
+  --shadow-offset-x: 0px;
+  --shadow-offset-y: 10px;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 102, 255, 0.1);
+  --glass-blur: 16px;
+
+  /* Electric gradients */
+  --gradient-primary: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+  --gradient-accent: linear-gradient(135deg, #FF3366 0%, #CC0033 100%);
+  --gradient-card: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  --gradient-shimmer: linear-gradient(90deg, transparent 0%, rgba(0,102,255,0.2) 50%, transparent 100%);
+  --gradient-hero: linear-gradient(135deg, #0A1628 0%, #0f172a 50%, #0A1628 100%);
+
+  --sidebar-ring: #0066FF;
+  --sidebar-accent: #eff6ff;
+  --sidebar-border: #cbd5e1;
+  --card-foreground: #0f172a;
+  --sidebar-primary: #0066FF;
+  --muted-foreground: #64748b;
+  --accent-foreground: #0f172a;
+  --popover-foreground: #0f172a;
+  --primary-foreground: #ffffff;
+  --sidebar-foreground: #0f172a;
+  --secondary-foreground: #475569;
+  --destructive-foreground: #ffffff;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-primary-foreground: #ffffff;
+}
+
+.dark {
+  /* Deep Navy + Electric Blue - Dark Mode */
+  --card: #1e293b;
+  --ring: #0066FF;
+  --input: #334155;
+  --muted: #0f172a;
+  --accent: #1e3a8a;
+  --border: #1e293b;
+  --radius: 0.75rem;
+  --chart-1: #0066FF;
+  --chart-2: #3b82f6;
+  --chart-3: #60a5fa;
+  --chart-4: #FF3366;
+  --chart-5: #ff6b9d;
+  --popover: #0f172a;
+  --primary: #0066FF;
+  --sidebar: #020617;
+  --secondary: #1e293b;
+  --background: #0A1628;
+  --foreground: #f8fafc;
+  --destructive: #FF3366;
+
+  /* Tech shadow system - Dark */
+  --shadow-blur: 32px;
+  --shadow-color: 217 100% 50%;
+  --shadow-spread: -8px;
+  --shadow-opacity: 0.3;
+  --shadow-offset-x: 0px;
+  --shadow-offset-y: 12px;
+
+  /* Glassmorphism - Dark */
+  --glass-bg: rgba(10, 22, 40, 0.7);
+  --glass-border: rgba(0, 102, 255, 0.15);
+  --glass-blur: 20px;
+
+  /* Electric gradients - Dark */
+  --gradient-primary: linear-gradient(135deg, #0066FF 0%, #3b82f6 100%);
+  --gradient-accent: linear-gradient(135deg, #FF3366 0%, #ff6b9d 100%);
+  --gradient-card: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  --gradient-shimmer: linear-gradient(90deg, transparent 0%, rgba(0,102,255,0.15) 50%, transparent 100%);
+  --gradient-hero: linear-gradient(135deg, #0A1628 0%, #1e293b 50%, #0A1628 100%);
+
+  --sidebar-ring: #0066FF;
+  --sidebar-accent: #1e3a8a;
+  --sidebar-border: #1e293b;
+  --card-foreground: #f8fafc;
+  --sidebar-primary: #0066FF;
+  --muted-foreground: #94a3b8;
+  --accent-foreground: #bfdbfe;
+  --popover-foreground: #f8fafc;
+  --primary-foreground: #ffffff;
+  --sidebar-foreground: #f8fafc;
+  --secondary-foreground: #cbd5e1;
+  --destructive-foreground: #ffffff;
+  --sidebar-accent-foreground: #bfdbfe;
+  --sidebar-primary-foreground: #ffffff;
+}
+
+/* ===== Modern Base Styles ===== */
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  font-family: var(--font-sans);
+  position: relative;
+}
+
+/* Background noise texture for atmosphere */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 51, 102, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dark body::before {
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 51, 102, 0.05) 0%, transparent 50%);
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Modern Card Styles ===== */
+.card-modern {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-modern:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 25px -5px rgba(16, 185, 129, 0.1),
+    0 20px 40px -10px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.dark .card-modern {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 10px 15px -3px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+.dark .card-modern:hover {
+  box-shadow:
+    0 10px 25px -5px rgba(52, 211, 153, 0.15),
+    0 20px 40px -10px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+/* ===== New Utility Classes ===== */
+
+/* Text gradient - Electric blue to hot pink */
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, #FF3366 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism card */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 8px 32px 0 rgba(0, 102, 255, 0.1),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-card {
+  box-shadow:
+    0 8px 32px 0 rgba(0, 102, 255, 0.2),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Brutal shadow for impact */
+.shadow-brutal {
+  box-shadow: 6px 6px 0px 0px var(--primary);
+  transition: all 0.3s ease;
+}
+
+.shadow-brutal:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px 0px var(--primary);
+}
+
+/* Text glow effect */
+.text-glow {
+  text-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+}
+
+/* Neon border effect */
+.neon-border {
+  border: 2px solid var(--primary);
+  box-shadow:
+    0 0 5px var(--primary),
+    0 0 10px var(--primary),
+    inset 0 0 5px var(--primary);
+}
+
+/* Electric hover effect */
+.electric-hover {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.electric-hover::before {
+  content: '';
+  position: absolute;
+  inset: -100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 102, 255, 0.3),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.electric-hover:hover::before {
+  transform: translateX(100%);
+}
+
+/* ===== Modern Button Hover Effects ===== */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn-glow:hover::before {
+  opacity: 1;
+}
+
+/* ===== Skeleton Loading Animation ===== */
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--muted) 0%, var(--border) 50%, var(--muted) 100%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 2s ease-in-out infinite;
+  border-radius: var(--radius);
+}
+
+.skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: var(--muted);
+}
+
+.skeleton-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 102, 255, 0.15) 50%,
+    transparent 100%
+  );
+  animation: skeleton-shimmer 1.8s infinite;
+}
+
+.dark .skeleton-shimmer::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 102, 255, 0.25) 50%,
+    transparent 100%
+  );
+}
+
+/* ===== Progress Stepper Styles ===== */
+.stepper-connector {
+  background: linear-gradient(90deg, var(--primary) var(--progress, 0%), var(--border) var(--progress, 0%));
+  transition: --progress 0.5s ease;
+}
+
+.stepper-step {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stepper-step.completed {
+  background: var(--gradient-primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+.stepper-step.active {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.3);
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.1);
+  }
+}
+
+/* ===== Auto-save Indicator ===== */
+@keyframes save-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.save-indicator {
+  animation: save-pulse 1s ease-in-out;
+}
+
+.save-indicator.saving {
+  animation: save-pulse 0.5s ease-in-out infinite;
+}
+
+/* ===== Micro-interactions ===== */
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-scale {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.click-shrink:active {
+  transform: scale(0.98);
+}
+
+/* ===== Focus Ring Styles ===== */
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring);
+}
+
+/* ===== Smooth Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* ===== Toast/Notification Styles ===== */
+.toast-enter {
+  animation: toast-slide-in 0.3s ease-out;
+}
+
+.toast-exit {
+  animation: toast-slide-out 0.2s ease-in;
+}
+
+@keyframes toast-slide-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-slide-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* ===== Badge Glow Effect ===== */
+.badge-glow {
+  box-shadow: 0 0 10px currentColor;
+}
+
+/* ===== Gradient Border ===== */
+.gradient-border {
+  position: relative;
+  background: var(--card);
+  border-radius: var(--radius);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: var(--gradient-primary);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* ===== Loading Spinner Styles ===== */
+.spinner-gradient {
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Backdrop Blur for Modals ===== */
+.backdrop-blur-modal {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dark .backdrop-blur-modal {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* ===== Typography Enhancements ===== */
+.text-balance {
+  text-wrap: balance;
+}
+
+.prose-modern {
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-body: var(--foreground);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-links: var(--primary);
+  --tw-prose-quotes: var(--muted-foreground);
+  --tw-prose-quote-borders: var(--primary);
+}
+
+/* ===== Dark Mode Enhancements ===== */
+
+/* Enhanced dark mode glow effects */
+.dark .glow-primary {
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.3), 0 0 40px rgba(52, 211, 153, 0.1);
+}
+
+.dark .glow-accent {
+  box-shadow: 0 0 15px rgba(52, 211, 153, 0.2);
+}
+
+/* Dark mode button enhancements */
+.dark .btn-premium {
+  box-shadow: 0 4px 14px rgba(52, 211, 153, 0.25);
+}
+
+.dark .btn-premium:hover {
+  box-shadow: 0 6px 20px rgba(52, 211, 153, 0.35);
+}
+
+/* Dark mode card hover glow */
+.dark .card-hover-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(52, 211, 153, 0.2),
+    0 8px 25px -5px rgba(52, 211, 153, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+/* Dark mode input focus */
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px rgba(52, 211, 153, 0.5);
+}
+
+/* Dark mode stepper */
+.dark .stepper-step.completed {
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.3);
+}
+
+.dark .stepper-step.active {
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.4);
+}
+
+@keyframes dark-pulse-ring {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(52, 211, 153, 0.15);
+  }
+}
+
+.dark .stepper-step.active {
+  animation: dark-pulse-ring 2s ease-in-out infinite;
+}
+
+/* Dark mode skeleton loading */
+.dark .skeleton {
+  background: linear-gradient(90deg, var(--muted) 0%, rgba(51, 65, 85, 0.8) 50%, var(--muted) 100%);
+}
+
+.dark .skeleton-shimmer::after {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%);
+}
+
+/* Dark mode progress bar */
+.dark .progress-bar {
+  background: rgba(51, 65, 85, 0.5);
+}
+
+.dark .progress-bar-fill {
+  background: linear-gradient(90deg, #34d399, #10b981);
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.5);
+}
+
+/* Dark mode borders - subtle glow on interactive elements */
+.dark .border-glow:hover {
+  border-color: rgba(52, 211, 153, 0.5);
+}
+
+/* Dark mode text selection */
+.dark ::selection {
+  background: rgba(52, 211, 153, 0.3);
+  color: #f1f5f9;
+}
+
+/* Dark mode code blocks */
+.dark pre,
+.dark code {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(51, 65, 85, 0.5);
+}
+
+/* Dark mode links */
+.dark a:not(.btn):hover {
+  color: #34d399;
+}
+
+/* Dark mode tabs */
+.dark [data-state="active"] {
+  background: var(--card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode dialogs/modals */
+.dark [role="dialog"] {
+  background: var(--card);
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(51, 65, 85, 0.5);
+}
+
+/* Dark mode dropdowns */
+.dark [role="listbox"],
+.dark [role="menu"] {
+  background: var(--popover);
+  border-color: rgba(51, 65, 85, 0.5);
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(51, 65, 85, 0.5);
+}
+
+/* Dark mode badge styles */
+.dark .badge-success {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+.dark .badge-warning {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.dark .badge-error {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.dark .badge-info {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Dark mode decorative gradients */
+.dark .gradient-bg-subtle {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.05) 0%, transparent 50%);
+}
+
+.dark .gradient-bg-card {
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%);
+}
+
+/* Dark mode dividers */
+.dark hr,
+.dark .divider {
+  border-color: rgba(51, 65, 85, 0.5);
+}
+
+/* Dark mode tooltips */
+.dark [role="tooltip"] {
+  background: var(--popover);
+  border-color: rgba(51, 65, 85, 0.5);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Smooth Dark Mode Transition ===== */
+html.dark {
+  color-scheme: dark;
+}
+
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure consistent border radius throughout */
+* {
+  --radius: 0.75rem;
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .dark {
+    --background: #ffffff;
+    --foreground: #1e293b;
+    --card: #ffffff;
+    --muted: #f8fafc;
+    --border: #e2e8f0;
+  }
+}
