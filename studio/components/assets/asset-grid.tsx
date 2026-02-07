@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { AssetDetailDialog } from './asset-detail-dialog'
@@ -18,19 +18,49 @@ interface AssetGridProps {
     groups: AssetGroup[]
 }
 
-export function AssetGrid({ groups }: AssetGridProps) {
+export function AssetGrid({ groups: initialGroups }: AssetGridProps) {
     const [selectedGroup, setSelectedGroup] = useState<AssetGroup | null>(null)
     const [isDialogOpen, setIsDialogOpen] = useState(false)
+    const [groups, setGroups] = useState(initialGroups)
     const router = useRouter()
+
+    // Sync with initial groups when they change from server
+    useEffect(() => {
+        setGroups(initialGroups)
+    }, [initialGroups])
 
     const handleGroupClick = (group: AssetGroup) => {
         setSelectedGroup(group)
         setIsDialogOpen(true)
     }
 
-    const handleUpdate = () => {
+    const handleUpdate = (updatedAssetId?: string, newStatus?: 'draft' | 'published') => {
+        // Optimistic update: immediately update local state if status changed
+        if (updatedAssetId && newStatus) {
+            setGroups(prevGroups =>
+                prevGroups.map(group => ({
+                    ...group,
+                    items: group.items.map(item =>
+                        item.id === updatedAssetId
+                            ? { ...item, status: newStatus }
+                            : item
+                    )
+                }))
+            )
+
+            // Also update the selected group so dialog shows updated data
+            setSelectedGroup(prev => prev ? {
+                ...prev,
+                items: prev.items.map(item =>
+                    item.id === updatedAssetId
+                        ? { ...item, status: newStatus }
+                        : item
+                )
+            } : null)
+        }
+
+        // Refresh from server in background
         router.refresh()
-        // Optimistic updates for complex groups are tricky, relying on refresh for now
     }
 
     if (!groups || groups.length === 0) {

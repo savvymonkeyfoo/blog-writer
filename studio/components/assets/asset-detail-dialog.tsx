@@ -16,7 +16,7 @@ interface AssetDetailDialogProps {
     assets: Asset[]
     open: boolean
     onOpenChange: (open: boolean) => void
-    onUpdate: () => void
+    onUpdate: (updatedAssetId?: string, newStatus?: 'draft' | 'published') => void
 }
 
 export function AssetDetailDialog({ assets, open, onOpenChange, onUpdate }: AssetDetailDialogProps) {
@@ -62,15 +62,17 @@ export function AssetDetailDialog({ assets, open, onOpenChange, onUpdate }: Asse
         if (!activeAsset) return
         const newStatus = checked ? 'published' : 'draft'
 
-        // Optimistic update
+        // Optimistic update in dialog
         setLocalAssetStatuses(prev => ({
             ...prev,
             [activeAsset.id]: newStatus
         }))
 
+        // Immediately notify parent for optimistic update in grid
+        onUpdate(activeAsset.id, newStatus)
+
         startTransition(async () => {
             await updateAssetStatus(activeAsset.id, newStatus)
-            onUpdate()
         })
     }
 
