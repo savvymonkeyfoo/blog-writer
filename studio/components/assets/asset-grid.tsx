@@ -84,6 +84,25 @@ export function AssetGrid({ groups }: AssetGridProps) {
                                 )}
 
                                 <div className="absolute top-2 right-2 flex gap-1">
+                                    {/* Status Badge */}
+                                    {(() => {
+                                        const hasPublished = group.items.some(a => a.status === 'published')
+                                        const allDraft = group.items.every(a => a.status === 'draft')
+                                        if (hasPublished) {
+                                            return (
+                                                <Badge variant="default" className="bg-green-600/90 text-white hover:bg-green-700/90 backdrop-blur-sm">
+                                                    Published
+                                                </Badge>
+                                            )
+                                        } else if (allDraft) {
+                                            return (
+                                                <Badge variant="secondary" className="bg-gray-600/90 text-white hover:bg-gray-700/90 backdrop-blur-sm">
+                                                    Draft
+                                                </Badge>
+                                            )
+                                        }
+                                        return null
+                                    })()}
                                     {group.items.length > 1 && (
                                         <Badge variant="secondary" className="gap-1 bg-black/50 text-white hover:bg-black/70 backdrop-blur-sm">
                                             <Layers className="h-3 w-3" />

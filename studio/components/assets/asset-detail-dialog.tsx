@@ -24,6 +24,7 @@ export function AssetDetailDialog({ assets, open, onOpenChange, onUpdate }: Asse
     const [copied, setCopied] = useState(false)
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
     const [isDeleting, setIsDeleting] = useState(false)
+    const [localAssetStatuses, setLocalAssetStatuses] = useState<Record<string, 'draft' | 'published'>>({})
 
     const imageAsset = assets.find(a => a.type === 'image')
     const articleAsset = assets.find(a => a.type === 'article')
@@ -33,6 +34,17 @@ export function AssetDetailDialog({ assets, open, onOpenChange, onUpdate }: Asse
     const [activeTab, setActiveTab] = useState(defaultTab)
 
     const activeAsset = activeTab === 'image' ? imageAsset : (activeTab === 'article' ? articleAsset : socialAsset)
+
+    // Get current status (use local state if available for optimistic update)
+    const getCurrentStatus = () => {
+        if (!activeAsset) return 'draft'
+        return localAssetStatuses[activeAsset.id] || activeAsset.status
+    }
+
+    // Reset local status when assets change
+    useEffect(() => {
+        setLocalAssetStatuses({})
+    }, [assets])
 
     // Sync activeTab with available assets
     useEffect(() => {
@@ -48,8 +60,15 @@ export function AssetDetailDialog({ assets, open, onOpenChange, onUpdate }: Asse
 
     const handleStatusChange = (checked: boolean) => {
         if (!activeAsset) return
+        const newStatus = checked ? 'published' : 'draft'
+
+        // Optimistic update
+        setLocalAssetStatuses(prev => ({
+            ...prev,
+            [activeAsset.id]: newStatus
+        }))
+
         startTransition(async () => {
-            const newStatus = checked ? 'published' : 'draft'
             await updateAssetStatus(activeAsset.id, newStatus)
             onUpdate()
         })
@@ -134,12 +153,12 @@ export function AssetDetailDialog({ assets, open, onOpenChange, onUpdate }: Asse
                                 <div className="flex items-center space-x-2">
                                     <Switch
                                         id="published-mode"
-                                        checked={activeAsset.status === 'published'}
+                                        checked={getCurrentStatus() === 'published'}
                                         onCheckedChange={handleStatusChange}
                                         disabled={isPending}
                                     />
-                                    <Label htmlFor="published-mode" className={activeAsset.status === 'published' ? 'font-bold text-primary' : 'text-muted-foreground'}>
-                                        {activeAsset.status === 'published' ? 'Published' : 'Draft'}
+                                    <Label htmlFor="published-mode" className={getCurrentStatus() === 'published' ? 'font-bold text-primary' : 'text-muted-foreground'}>
+                                        {getCurrentStatus() === 'published' ? 'Published' : 'Draft'}
                                     </Label>
                                 </div>
                                 <Button
