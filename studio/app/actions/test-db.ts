@@ -18,10 +18,23 @@ export async function testDatabaseConnection() {
     } catch (error) {
         console.error('Database connection test failed:', error);
 
+        // Check if it's a PostgreSQL error with more details
+        const pgError = error as any;
+        const errorDetails = {
+            message: pgError.message || 'Unknown error',
+            code: pgError.code,
+            detail: pgError.detail,
+            hint: pgError.hint,
+            table: pgError.table_name,
+            column: pgError.column_name,
+            constraint: pgError.constraint_name,
+            fullError: String(error)
+        };
+
         return {
             success: false,
             message: error instanceof Error ? error.message : 'Unknown error',
-            error: String(error)
+            error: JSON.stringify(errorDetails, null, 2)
         };
     }
 }
@@ -38,7 +51,9 @@ export async function testInsertAsset() {
             metadata: JSON.stringify({ test: true })
         };
 
+        console.log('[testInsertAsset] Attempting to insert:', testAsset);
         await db.insert(assets).values(testAsset);
+        console.log('[testInsertAsset] Insert successful');
 
         // Try to read it back
         const result = await db.select().from(assets).limit(5);
@@ -53,10 +68,21 @@ export async function testInsertAsset() {
     } catch (error) {
         console.error('Test insert failed:', error);
 
+        // Check if it's a PostgreSQL error with more details
+        const pgError = error as any;
+        const errorDetails = {
+            message: pgError.message || 'Unknown error',
+            code: pgError.code,
+            detail: pgError.detail,
+            hint: pgError.hint,
+            table: pgError.table_name,
+            fullError: String(error)
+        };
+
         return {
             success: false,
             message: error instanceof Error ? error.message : 'Unknown error',
-            error: String(error)
+            error: JSON.stringify(errorDetails, null, 2)
         };
     }
 }
