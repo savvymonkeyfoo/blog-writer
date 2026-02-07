@@ -103,7 +103,7 @@ export function useAutoSave(
 ) {
     const [status, setStatus] = React.useState<SaveStatus>('idle')
     const [lastSaved, setLastSaved] = React.useState<Date | undefined>()
-    const timeoutRef = React.useRef<NodeJS.Timeout>()
+    const timeoutRef = React.useRef<NodeJS.Timeout | undefined>(undefined)
     const previousContentRef = React.useRef<string>(content)
 
     React.useEffect(() => {
