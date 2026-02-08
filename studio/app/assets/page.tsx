@@ -2,6 +2,8 @@ import { getGroupedAssets } from '@/app/actions/assets';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { AssetGrid } from '@/components/assets/asset-grid';
+import { ModeToggle } from '@/components/mode-toggle';
+import { UserMenu } from '@/components/auth/user-menu';
 
 export default async function AssetsPage() {
     const { data: groups } = await getGroupedAssets();
@@ -22,6 +24,10 @@ export default async function AssetsPage() {
                     <p className="text-muted-foreground mt-1">
                         Your history of generated images and posts
                     </p>
+                </div>
+                <div className="flex gap-3 items-center">
+                    <ModeToggle />
+                    <UserMenu />
                 </div>
             </div>
 

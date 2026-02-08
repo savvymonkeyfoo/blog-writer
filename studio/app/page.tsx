@@ -20,6 +20,7 @@ import { generateDraftAction, generateSocialPostAction } from '@/app/actions/wri
 import { generateImagePromptsAction } from '@/app/actions/assets'
 import { Sparkles, Loader2, ArrowRight, LayoutGrid, Share2, Copy, RefreshCw } from 'lucide-react'
 import { ModeToggle } from '@/components/mode-toggle'
+import { UserMenu } from '@/components/auth/user-menu'
 import {
   IdeationErrorBoundary,
   ResearchErrorBoundary,
@@ -421,6 +422,7 @@ export default function HomePage() {
                 </a>
               </Button>
               <ModeToggle />
+              <UserMenu />
             </div>
           </div>
 
