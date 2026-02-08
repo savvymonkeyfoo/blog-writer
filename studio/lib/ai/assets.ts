@@ -46,7 +46,7 @@ For each prompt:
 - Avoid text in images, faces of real people, or controversial content`
 
     const { object } = await generateObject({
-        model: azure('gpt-5.2-chat'),
+        model: azure('gpt-5.2'),
         schema: ImagePromptSchema,
         prompt,
         // Note: temperature not supported for reasoning models

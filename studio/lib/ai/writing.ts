@@ -58,10 +58,10 @@ RESEARCH SUMMARY:
 ${research.summary}
 
 KEY STATISTICS:
-${research.keyStats.map((stat, i) => `${i + 1}. ${stat}`).join('\n')}
+${research.keyStats.map((stat, i) => `${i + 1}. ${stat.stat} (Source: ${stat.sourceId})`).join('\n')}
 
-CITATIONS:
-${research.citations.map(c => `- ${c.title}: ${c.url}`).join('\n')}
+EVIDENCE LEDGER:
+${research.evidenceLedger.map(evidence => `- ${evidence.id}: ${evidence.title} (${evidence.publisher}, ${evidence.publishedDate}) ${evidence.url}`).join('\n')}
 
 INSTRUCTIONS:
 1. Start with the hook.
@@ -73,7 +73,7 @@ INSTRUCTIONS:
 7. Use Australian English.`
 
     const { text } = await generateText({
-        model: azure('gpt-5.2-chat'),
+        model: azure('gpt-5.2'),
         system: MIKE_JONES_PERSONA,
         prompt,
         // Note: temperature not supported for reasoning models
@@ -128,7 +128,7 @@ INSTRUCTIONS:
 6. NO HASHTAGS.`
 
     const { text } = await generateText({
-        model: azure('gpt-5.2-chat'),
+        model: azure('gpt-5.2'),
         system: MIKE_JONES_SOCIAL_PERSONA,
         prompt,
         // Note: temperature not supported for reasoning models
@@ -152,7 +152,7 @@ OUTPUT:
 Return the rewritten text ONLY. Do not wrap it in markdown block quotes or add conversational filler.`
 
     const { text } = await generateText({
-        model: azure('gpt-5.2-chat'),
+        model: azure('gpt-5.2'),
         system: MIKE_JONES_PERSONA,
         prompt,
         // Note: temperature not supported for reasoning models

@@ -27,7 +27,7 @@ export async function generateAngles(topic: string): Promise<Angle[]> {
     }
 
     const { object } = await generateObject({
-        model: azure('gpt-5.2-chat'),
+        model: azure('gpt-5.2'),
         schema: AnglesResponseSchema,
         prompt: `You are a LinkedIn thought leadership strategist. Given the topic below, generate exactly 3 distinctive angles for a thought-provoking article.
 
