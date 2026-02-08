@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { ExternalLink, Quote, BarChart3, ArrowRight, Loader2, Sparkles, BookOpen, TrendingUp, AlertCircle } from 'lucide-react'
+import { ExternalLink, ArrowRight, Loader2, Sparkles, BookOpen, TrendingUp, AlertCircle, ShieldCheck, AlertTriangle, CircleHelp, Calendar, Building } from 'lucide-react'
 import type { ResearchResult } from '@/lib/ai/research'
 import type { Angle } from '@/lib/ai/ideation'
 
@@ -86,7 +86,7 @@ export function ResearchDashboard({ angle, research, isLoading, onProceed }: Res
                             animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
                             transition={{ duration: 1.5, repeat: Infinity }}
                         />
-                        <span>Gathering sources and citations</span>
+                        <span>Gathering sources and evidence</span>
                     </div>
                     <p className="text-xs text-muted-foreground/70">This may take up to 30 seconds</p>
                 </motion.div>
@@ -181,9 +181,9 @@ export function ResearchDashboard({ angle, research, isLoading, onProceed }: Res
                 </Card>
             </motion.div>
 
-            {/* Two-column layout for Citations and Stats */}
+            {/* Two-column layout for Evidence Ledger and Stats */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* Citations - Enhanced */}
+                {/* Evidence Ledger - Cards */}
                 <motion.div variants={itemVariants}>
                     <Card variant="elevated" className="h-full">
                         <CardHeader>
@@ -192,21 +192,21 @@ export function ResearchDashboard({ angle, research, isLoading, onProceed }: Res
                                     className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/10"
                                     whileHover={{ scale: 1.1 }}
                                 >
-                                    <ExternalLink className="h-5 w-5 text-blue-500" />
+                                    <ShieldCheck className="h-5 w-5 text-blue-500" />
                                 </motion.div>
                                 <div>
-                                    <span>Citations</span>
+                                    <span>Evidence Ledger</span>
                                     <span className="ml-2 text-xs font-normal text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
-                                        {research.citations.length}
+                                        {research.evidenceLedger.length}
                                     </span>
                                 </div>
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-3">
                             <AnimatePresence>
-                                {research.citations.map((citation, index) => (
+                                {research.evidenceLedger.map((evidence, index) => (
                                     <motion.div
-                                        key={index}
+                                        key={evidence.id}
                                         initial={{ opacity: 0, x: -20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: index * 0.05 }}
@@ -216,17 +216,34 @@ export function ResearchDashboard({ angle, research, isLoading, onProceed }: Res
                                         <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-blue-500/30 rounded-full group-hover:w-1 transition-all" />
                                         <div className="pl-4 py-2">
                                             <a
-                                                href={citation.url}
+                                                href={evidence.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-start gap-2 group/link"
                                             >
-                                                <span className="flex-1">{citation.title}</span>
+                                                <span className="flex-1">{evidence.title}</span>
                                                 <ExternalLink className="h-3 w-3 flex-shrink-0 mt-1 opacity-0 group-hover/link:opacity-100 transition-opacity" />
                                             </a>
-                                            {citation.snippet && (
-                                                <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{citation.snippet}</p>
-                                            )}
+                                            <div className="mt-2 flex flex-wrap gap-2 text-[11px] text-muted-foreground">
+                                                <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5">
+                                                    <Building className="h-3 w-3" />
+                                                    {evidence.publisher}
+                                                </span>
+                                                <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5">
+                                                    <Calendar className="h-3 w-3" />
+                                                    {evidence.publishedDate}
+                                                </span>
+                                                <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5">
+                                                    <ShieldCheck className="h-3 w-3" />
+                                                    {evidence.sourceTier}
+                                                </span>
+                                                <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5">
+                                                    <CircleHelp className="h-3 w-3" />
+                                                    {evidence.id}
+                                                </span>
+                                            </div>
+                                            <p className="text-xs text-muted-foreground mt-2">{evidence.relevance}</p>
+                                            <p className="text-xs text-foreground/80 mt-2 italic">“{evidence.quoteOrFinding}”</p>
                                         </div>
                                     </motion.div>
                                 ))}
@@ -253,7 +270,7 @@ export function ResearchDashboard({ angle, research, isLoading, onProceed }: Res
                             <AnimatePresence>
                                 {research.keyStats.map((stat, index) => (
                                     <motion.div
-                                        key={index}
+                                        key={`${stat.sourceId}-${index}`}
                                         initial={{ opacity: 0, x: 20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: index * 0.05 }}
@@ -266,9 +283,12 @@ export function ResearchDashboard({ angle, research, isLoading, onProceed }: Res
                                         >
                                             {index + 1}
                                         </motion.span>
-                                        <span className="text-sm text-foreground/80 group-hover:text-foreground transition-colors">
-                                            {stat}
-                                        </span>
+                                        <div className="text-sm text-foreground/80 group-hover:text-foreground transition-colors">
+                                            <div>{stat.stat}</div>
+                                            <div className="mt-1 text-[11px] text-muted-foreground">
+                                                Source: {stat.sourceId}
+                                            </div>
+                                        </div>
                                     </motion.div>
                                 ))}
                             </AnimatePresence>
@@ -276,6 +296,34 @@ export function ResearchDashboard({ angle, research, isLoading, onProceed }: Res
                     </Card>
                 </motion.div>
             </div>
+
+            {/* Evidence Gaps + Confidence */}
+            <motion.div variants={itemVariants}>
+                <Card variant="glass">
+                    <CardHeader>
+                        <CardTitle className="flex items-center gap-3">
+                            <motion.div
+                                className="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-500/10"
+                                whileHover={{ scale: 1.1 }}
+                            >
+                                <AlertTriangle className="h-5 w-5 text-amber-500" />
+                            </motion.div>
+                            <span>Evidence Gaps & Confidence</span>
+                            <span className="ml-auto text-xs font-normal text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
+                                {research.confidence.toUpperCase()}
+                            </span>
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                        {research.gaps.map((gap, index) => (
+                            <div key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                <AlertTriangle className="h-4 w-4 mt-0.5 text-amber-500" />
+                                <span>{gap}</span>
+                            </div>
+                        ))}
+                    </CardContent>
+                </Card>
+            </motion.div>
 
             {/* Proceed Button - Enhanced */}
             <motion.div
